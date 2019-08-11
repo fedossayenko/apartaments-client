@@ -1,0 +1,26 @@
+.example-card {
+  margin: 20px;
+  background-color: rgba(77, 245, 62, 0.4);
+}
+
+.example-card.watched {
+  background-color: white;
+}
+
+.example-card.changed {
+  background-color: #ff585d;
+}
+
+.example-header-image {
+  background-size: cover;
+}
+
+.mat-card-title {
+  font-size: 18px;
+}
+
+.load-more {
+  display: flex;
+  justify-content: center;
+  margin: 20px;
+}

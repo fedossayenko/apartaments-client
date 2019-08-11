@@ -1,23 +1,24 @@
-import { Component, OnInit } from '@angular/core'
-
-import { UserService } from './core'
-import { ApartmentService } from './core/services/apartment.service'
+import { Component, OnInit } from '@angular/core';
+import { ApartmentService } from './core/services/apartment.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html'
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
 
   items: Array<any>;
+
   constructor(
-    private apartmentService: ApartmentService
+    private apartmentService: ApartmentService,
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    // this.userService.populate()
-    this.apartmentService.get().subscribe((data) => {
-      this.items = data;
+    this.route.url.subscribe(url => {
+      console.log(url);
     });
   }
 }

@@ -1,22 +1,31 @@
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
+import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { ApartmentComponent } from './apartment/apartment.component';
+import { AverageComponent } from './average/average.component';
+import { ChangedComponent } from './changed/changed.component';
 
 const routes: Routes = [
   {
-    path: 'settings',
-    loadChildren: './settings/settings.module#SettingsModule'
+    path: '',
+    redirectTo: '/dashboard',
+    pathMatch: 'full'
   },
   {
-    path: 'profile',
-    loadChildren: './profile/profile.module#ProfileModule'
+    path: 'dashboard',
+    component: DashboardComponent
   },
   {
-    path: 'editor',
-    loadChildren: './editor/editor.module#EditorModule'
+    path: 'average',
+    component: AverageComponent
   },
   {
-    path: 'article',
-    loadChildren: './article/article.module#ArticleModule'
+    path: 'changed',
+    component: ChangedComponent
+  },
+  {
+    path: 'apartment/:id',
+    component: ApartmentComponent
   }
 ];
 

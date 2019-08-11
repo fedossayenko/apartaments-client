@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  api_url: 'http://apartments-server-apartments.apps.us-east-2.online-starter.openshift.com'
+  api_url: 'https://realt-test.herokuapp.com/api'
 };

@@ -1,26 +1,22 @@
 <!--<app-layout-header></app-layout-header>-->
 
-<!--<router-outlet></router-outlet>-->
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <mat-icon class="mat-icon material-icons mat-icon-no-color" role="img" aria-hidden="true" routerLink="/dashboard">
+      format_list_bulleted
+    </mat-icon>
+
+    <mat-icon class="mat-icon material-icons mat-icon-no-color" role="img" aria-hidden="true" routerLink="/average">
+      timeline
+    </mat-icon>
+
+    <mat-icon class="mat-icon material-icons mat-icon-no-color" role="img" aria-hidden="true" routerLink="/changed">
+      track_changes
+    </mat-icon>
+  </mat-toolbar-row>
+</mat-toolbar>
+<router-outlet></router-outlet>
 
 <!--<app-layout-footer></app-layout-footer>-->
 
 
-<div *ngFor="let item of items">
-  <mat-card class="example-card">
-    <mat-card-header>
-<!--      <div mat-card-avatar class="example-header-image"></div>-->
-      <mat-card-title>{{ item.location_address }}</mat-card-title>
-      <mat-card-subtitle>Количество комнат: {{ item.number_of_rooms }}</mat-card-subtitle>
-    </mat-card-header>
-    <img mat-card-image [src]="item.photo">
-    <mat-card-content>
-      <p>
-        {{ item.date_create | date}}
-      </p>
-    </mat-card-content>
-<!--    <mat-card-actions>-->
-<!--      <button mat-button>LIKE</button>-->
-<!--      <button mat-button>SHARE</button>-->
-<!--    </mat-card-actions>-->
-  </mat-card>
-</div>

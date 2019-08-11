@@ -1,0 +1,4 @@
+<mat-list *ngFor="let item of items">
+  <mat-list-item><b>{{ item.price_per_meter | number}} USD</b> |{{ item.price_amount | number}} USD |{{ item.date_create | date: 'dd/MM/yy HH:mm'}}</mat-list-item>
+  <mat-divider></mat-divider>
+</mat-list>
