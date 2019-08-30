@@ -5,6 +5,7 @@
 
 export const environment = {
   production: false,
+  hmr: false,
   api_url: 'http://127.0.0.1:5000/api'
   // api_url: 'https://realt-test.herokuapp.com/api'
 };

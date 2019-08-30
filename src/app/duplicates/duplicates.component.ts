@@ -6,7 +6,7 @@ import { ApartmentService } from '../core/services/apartment.service';
   templateUrl: './../dashboard/dashboard.component.html',
   styleUrls: ['./../dashboard/dashboard.component.scss']
 })
-export class ChangedComponent implements OnInit {
+export class DuplicatesComponent implements OnInit {
 
   items: Array<any>;
   offset = 0;
@@ -17,7 +17,7 @@ export class ChangedComponent implements OnInit {
   ngOnInit() {
     console.log('!!');
     // this.userService.populate()
-    this.apartmentService.get(this.offset, true).subscribe((data) => {
+    this.apartmentService.get(this.offset, false, true).subscribe((data) => {
       this.items = data;
     });
   }
@@ -25,7 +25,7 @@ export class ChangedComponent implements OnInit {
   loadmore(){
     this.offset++;
     this.isLoading = true;
-    this.apartmentService.get(this.offset, true).subscribe((data) => {
+    this.apartmentService.get(this.offset, false, true).subscribe((data) => {
       this.items = [...this.items, ...data];
       this.isLoading = false;
     });

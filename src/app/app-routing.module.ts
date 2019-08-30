@@ -4,6 +4,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ApartmentComponent } from './apartment/apartment.component';
 import { AverageComponent } from './average/average.component';
 import { ChangedComponent } from './changed/changed.component';
+import { DayInfoComponent } from './day-info/day-info.component';
+import { DeletedComponent } from './deleted/deleted.component';
+import { DuplicatesComponent } from './duplicates/duplicates.component';
 
 const routes: Routes = [
   {
@@ -22,6 +25,18 @@ const routes: Routes = [
   {
     path: 'changed',
     component: ChangedComponent
+  },
+  {
+    path: 'day_info',
+    component: DayInfoComponent
+  },
+  {
+    path: 'deleted',
+    component: DeletedComponent
+  },
+  {
+    path: 'duplicates',
+    component: DuplicatesComponent
   },
   {
     path: 'apartment/:id',

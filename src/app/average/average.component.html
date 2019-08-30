@@ -1,4 +1,28 @@
-<mat-list *ngFor="let item of items">
-  <mat-list-item><b>{{ item.price_per_meter | number}} USD</b> |{{ item.price_amount | number}} USD |{{ item.date_create | date: 'dd/MM/yy HH:mm'}}</mat-list-item>
-  <mat-divider></mat-divider>
-</mat-list>
+<!--<mat-list *ngFor="let item of items">-->
+<!--  <mat-list-item><b>{{ item.price_per_meter | number}} USD</b> |{{ item.price_amount | number}} USD |{{ item.apartment_count | number}} |{{ item.date_create | date: 'dd/MM/yy HH:mm'}}</mat-list-item>-->
+<!--  <mat-divider></mat-divider>-->
+<!--</mat-list>-->
+
+
+<table mat-table [dataSource]="items" class="mat-elevation-z2">
+
+  <ng-container matColumnDef="date_create">
+    <th mat-header-cell *matHeaderCellDef> Date</th>
+    <td mat-cell *matCellDef="let element"> {{element.date_create | date: 'dd/MM/yy HH:mm' }} </td>
+  </ng-container>
+  <ng-container matColumnDef="price_per_meter">
+    <th mat-header-cell *matHeaderCellDef>Per meter</th>
+    <td mat-cell *matCellDef="let element"> {{element.price_per_meter | number : '1.2-2' }} USD</td>
+  </ng-container>
+
+  <ng-container matColumnDef="price_amount">
+    <th mat-header-cell *matHeaderCellDef>Amount</th>
+    <td mat-cell *matCellDef="let element"> {{element.price_amount | number : '1.0-0' }} USD</td>
+  </ng-container>
+  <ng-container matColumnDef="apartment_count">
+    <th mat-header-cell *matHeaderCellDef>Count</th>
+    <td mat-cell *matCellDef="let element"> {{element.apartment_count | number : '1.0-0' }} </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>

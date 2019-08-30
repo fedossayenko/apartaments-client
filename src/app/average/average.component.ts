@@ -9,6 +9,7 @@ import { ApartmentService } from '../core/services/apartment.service';
 export class AverageComponent implements OnInit {
 
   items: Array<any>;
+  displayedColumns = ['date_create', 'price_per_meter', 'price_amount', 'apartment_count'];
 
   constructor(private apartmentService: ApartmentService) { }
 
